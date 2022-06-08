@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Kanit:ital,wght@0,200;1,300&family=Poppins:wght@100;200,400,600&display=swap');
+:root {
+    --colorAzul: #0A3871;
+    --colorBlanco: #ffffff;
+    --colorGris: #808080;
+    --colorNegro: #000000;
+    --colorMarfil: #efefef;
+    --colorVerde: #39d78d;
+    --colorRojo: #fe5152;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: var(--colorAzul);
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    height: 100%;
+    background: url(../assets/fondo.jpg) no-repeat center center/cover;
+}
+
+h2,
+h3 {
+    color: var(--colorNegro);
+}
+
+label {
+    font-weight: 600;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    font-size: 16px;
+    background-color: var(--colorBlanco);
+    width: 100%;
+    height: 100vh;
+    max-width: 800px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 3em;
+    border-radius: 0.6em;
+    box-shadow: 0 1.2em 2.4em rgba(111, 85, 0, 0.25);
+}
+
+#options-container {
+    text-align: center;
+}
+
+#options-container div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.2em 0 2.4em 0;
+}
+
+#options-container button,
+#new-palabra-button,
+.new_palabra_style {
+    padding: 0.6em 1.2em;
+    border: 2px solid var(--colorAzul);
+    background-color: var(--colorBlanco);
+    color: var(--colorAzul);
+    border-radius: 0.3em;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+#options-container button:hover,
+#new-palabra-button:hover,
+.new_palabra_style:hover {
+    border: 2px solid var(--colorGris);
+    background-color: var(--colorAzul);
+    color: var(--colorBlanco);
+}
+
+#options-container button:disabled {
+    border: 2px solid var(--colorGris);
+    color: var(--colorGris);
+    background-color: var(--colorMarfil);
+}
+
+#options-container button.active {
+    background-color: var(--colorAzul);
+    border: 2px solid var(--colorNegro);
+    color: var(--colorBlanco);
+}
+
+.letter-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+#letter-container button:disabled {
+    height: 2.4em;
+    width: 2.4em;
+    color: var(--colorGris);
+    border-radius: 0.3em;
+    border: 2px solid var(--colorGris);
+    background-color: var(--colorBlanco);
+    cursor: default;
+}
+
+#letter-container button {
+    height: 2.4em;
+    width: 2.4em;
+    color: var(--colorAzul);
+    border-radius: 0.3em;
+    border: 2px solid var(--colorAzul);
+    background-color: var(--colorBlanco);
+}
+
+.new-game-popup {
+    background-color: var(--colorBlanco);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.6em;
+}
+
+#user-input-section {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8em;
+    margin: 0.6em 0 1.2em 0;
+    color: var(--colorAzul);
+}
+
+canvas {
+    display: block;
+    width: 350px;
+    margin: auto;
+    border: 2px solid var(--colorAzul);
+}
+
+.hide {
+    display: none;
+}
+
+#result-text h2 {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+#result-text p {
+    font-size: 1.25em;
+    color: var(--colorAzul);
+    margin: 1em 0 2em 0;
+}
+
+#result-text span {
+    font-weight: 600;
+}
+
+#new-game-button {
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+    background-color: var(--colorAzul);
+    border: 3px solid var(--colorNegro);
+    color: var(--colorBlanco);
+    border-radius: 0.2em;
+}
+
+.win-msg {
+    color: var(--colorVerde);
+}
+
+.lose-msg {
+    color: var(--colorRojo);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    color: var(--colorNegro);
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 470px) {
+    .container {
+        width: 95%;
+    }
+    canvas {
+        display: block;
+        width: 250px;
+        height: 100px;
+        margin: auto;
+    }
+    .letter-container {
+        margin-top: 20px;
+    }
+    footer {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 320px) {
+    .container {
+        width: 90%;
+        height: 100vh;
+        padding: 15px 5px 5px 15px;
+    }
+    h2 {
+        font-size: 1.05em;
+        margin: 0px 0px 0px 30px;
+    }
+    h3 {
+        font-size: 1em;
+        margin: 10px 0px 0px 20px;
+        text-align: center;
+    }
+    hr {
+        display: none;
+    }
+    canvas {
+        display: block;
+        width: 250px;
+        height: 90px;
+        margin: auto;
+    }
+    .letter-container {
+        width: 100%;
+        gap: 0.3em;
+        margin-top: 15px;
+    }
+    #letter-container button {
+        height: 2em;
+        width: 2em;
+        border-radius: 0.3em;
+        background-color: var(--colorBlanco);
+    }
+    #options-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #options-container div {
+        width: 100%;
+        max-width: 150px;
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0px 0px 0px;
+    }
+    #options-container button {
+        margin: -15px 0px 0px 0px;
+    }
+    #result-text p {
+        text-align: center;
+    }
+    #new-game-button {
+        display: flex;
+        justify-content: center;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+}

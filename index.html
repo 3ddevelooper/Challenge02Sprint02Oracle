@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego del Ahorcado | Alura</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/svg" href="./assets/logo.svg" />
+</head>
+
+<diV>
+    <div class="container">
+        <div class="header-container">
+            <img src="./assets/logo.svg">
+            <h2>Juego del Ahorcado - Chellenge 2 - Alura</h2>
+        </div>
+        <div id="options-container"></div>
+        <div id="letter-container" class="letter-container hide"></div>
+        <div id="user-input-section"></div>
+        <div id="canva-container"><canvas id="canvas"></canvas></div>
+        <div id="new-game-container" class="new-game-popup hide">
+            <div id="result-text"></div>
+            <button id="new-game-button">Nuevo Juego</button>
+        </div>
+        <div id="new-palabra-container" class="new-game-popup hide">
+            <div id="agregar-text"></div>
+            <label>Ingresar Palabra</label><br>
+            <input class="new_palabra_style" type="text" id="inputPalabra" placeholder="Ingrese la palabra"><br>
+            <label>Elija Una Categoria</label><br>
+            <select class="new_palabra_style" id="opciones" name="opciones">
+                <option disabled selected value="0">-Elija una opción</option>
+                <option value="1">Frutas</option>
+                <option value="2">Animales</option>
+                <option value="3">Paises</option>
+            </select><br>
+            <div>
+                <button class="new_palabra_style" id="new-palabra-button" onclick="guardarPalabra()">Guardar</button>
+                <button class="new_palabra_style" id="back-button" onclick="quitarContenedor()">Volver</button>
+            </div>
+
+        </div>
+
+    </div>
+    <footer>
+        <p>Copyright &copy<span id="fecha"></span><a rel="nofollow noopener noreferrer" href="https://damiandries.com.ar/" target="_blank">
+           Damian Dries</a> | Todos los derechos reservados.</p>
+    </footer>
+    <!-- Script -->
+    <script src="./js/script.js"></script>
+    </body>
+
+</html>
